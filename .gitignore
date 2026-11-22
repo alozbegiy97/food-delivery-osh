@@ -1,0 +1,47 @@
+# --- Secrets and local environment (never commit) ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- Node / frontend ---
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+playwright-report/
+test-results/
+
+# --- Local data, uploads, databases ---
+media/
+uploads/
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+
+# --- Claude Code: personal local settings and notes (never commit) ---
+# CLAUDE.md (project rules) is committed; these personal files are not.
+.claude/settings.local.json
+CLAUDE.local.md
+
+# --- Logs and temp files ---
+*.log
+*.tmp
+tmp/
+
+# --- OS / editors ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,33 @@
+# Demo mode: production builds, nginx serves the SPA and proxies /api.
+# Only nginx (and the Mailpit UI) are published, on localhost.
+# Usage: docker compose -f compose.yaml -f compose.demo.yaml up --build -d
+
+services:
+  backend:
+    image: food-delivery-backend:demo
+    build:
+      target: prod
+    environment:
+      APP_ENV: demo
+      # Browser origin of nginx (DEC-140).
+      CSRF_TRUSTED_ORIGINS: ${CSRF_TRUSTED_ORIGINS:-http://localhost:${DEMO_HOST_PORT:-8080},http://127.0.0.1:${DEMO_HOST_PORT:-8080}}
+      # Password reset links point to nginx (DEC-108).
+      FRONTEND_BASE_URL: ${FRONTEND_BASE_URL:-http://localhost:${DEMO_HOST_PORT:-8080}}
+
+  worker:
+    image: food-delivery-worker:demo
+    build:
+      target: prod
+    environment:
+      APP_ENV: demo
+
+  web:
+    build:
+      context: ./frontend
+      target: demo
+    ports:
+      - "127.0.0.1:${DEMO_HOST_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped

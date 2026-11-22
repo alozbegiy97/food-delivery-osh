@@ -1,0 +1,115 @@
+# Shared services. Always combine with a mode file:
+#   dev : docker compose -f compose.yaml -f compose.dev.yaml up --build
+#   demo: docker compose -f compose.yaml -f compose.demo.yaml up --build -d
+# Required values come from `.env` (see `.env.example`); there are no
+# default credentials.
+
+name: food-delivery
+
+x-database-url: &database-url "postgresql+psycopg://${POSTGRES_USER:?set POSTGRES_USER in .env}:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}@db:5432/${POSTGRES_DB:?set POSTGRES_DB in .env}"
+
+x-app-environment: &app-environment
+  DATABASE_URL: *database-url
+  LOG_LEVEL: ${LOG_LEVEL:-INFO}
+  CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-}
+  RESTAURANT_TIMEZONE: ${RESTAURANT_TIMEZONE:-Asia/Bishkek}
+  JWT_SECRET_KEY: ${JWT_SECRET_KEY:?set JWT_SECRET_KEY in .env (at least 32 characters)}
+  ARGON2_TIME_COST: ${ARGON2_TIME_COST:-3}
+  ARGON2_MEMORY_COST_KIB: ${ARGON2_MEMORY_COST_KIB:-65536}
+  ARGON2_PARALLELISM: ${ARGON2_PARALLELISM:-4}
+  ACCESS_TOKEN_TTL_MINUTES: ${ACCESS_TOKEN_TTL_MINUTES:-15}
+  REFRESH_TOKEN_TTL_DAYS: ${REFRESH_TOKEN_TTL_DAYS:-30}
+  PASSWORD_RESET_TOKEN_TTL_MINUTES: ${PASSWORD_RESET_TOKEN_TTL_MINUTES:-30}
+  TELEGRAM_LINK_TOKEN_TTL_MINUTES: ${TELEGRAM_LINK_TOKEN_TTL_MINUTES:-10}
+  RATE_LIMIT_LOGIN: ${RATE_LIMIT_LOGIN:-5/minute}
+  RATE_LIMIT_PASSWORD_FORGOT: ${RATE_LIMIT_PASSWORD_FORGOT:-3/hour}
+  RATE_LIMIT_AUTHENTICATED: ${RATE_LIMIT_AUTHENTICATED:-120/minute}
+  RATE_LIMIT_PUBLIC: ${RATE_LIMIT_PUBLIC:-60/minute}
+  PAYMENT_TIMEOUT_MINUTES: ${PAYMENT_TIMEOUT_MINUTES:-30}
+  IDEMPOTENCY_KEY_TTL_HOURS: ${IDEMPOTENCY_KEY_TTL_HOURS:-24}
+  WORKER_HEARTBEAT_INTERVAL_SECONDS: ${WORKER_HEARTBEAT_INTERVAL_SECONDS:-10}
+  RATE_LIMIT_ENABLED: ${RATE_LIMIT_ENABLED:-true}
+  # Telegram Mini App (DEC-154 п. 8); empty token = Telegram disabled.
+  TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+  TELEGRAM_WEBAPP_AUTH_MAX_AGE_SECONDS: ${TELEGRAM_WEBAPP_AUTH_MAX_AGE_SECONDS:-3600}
+  TELEGRAM_WEBAPP_INIT_DATA_MAX_LENGTH: ${TELEGRAM_WEBAPP_INIT_DATA_MAX_LENGTH:-4096}
+  TELEGRAM_WEBAPP_CLOCK_SKEW_SECONDS: ${TELEGRAM_WEBAPP_CLOCK_SKEW_SECONDS:-60}
+  RATE_LIMIT_TELEGRAM_WEBAPP: ${RATE_LIMIT_TELEGRAM_WEBAPP:-5/minute}
+  # E-mail via Mailpit in dev/demo (DEC-108).
+  SMTP_HOST: ${SMTP_HOST:-mailpit}
+  SMTP_PORT: ${SMTP_PORT:-1025}
+  SMTP_FROM: ${SMTP_FROM:-Food Delivery Osh <no-reply@food-delivery.local>}
+
+services:
+  db:
+    image: postgis/postgis:16-3.6
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?set POSTGRES_DB in .env}
+      POSTGRES_USER: ${POSTGRES_USER:?set POSTGRES_USER in .env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      # Replaces the image's init script: PostGIS is installed by Alembic only.
+      - ./infra/postgres/initdb.d:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  mailpit:
+    image: axllent/mailpit:v1.31.6
+    ports:
+      - "127.0.0.1:${MAILPIT_UI_PORT:-8025}:8025"
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      <<: *app-environment
+    volumes:
+      # Uploaded images (DEC-70); served at /media.
+      - media-data:/app/media
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health', timeout=3)"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: ./backend
+    command: ["python", "-m", "app.worker"]
+    environment:
+      <<: *app-environment
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import os, sys, time; sys.exit(0 if time.time() - os.path.getmtime('/tmp/worker-heartbeat') < 60 else 1)"
+      interval: 15s
+      timeout: 5s
+      retries: 4
+      start_period: 10s
+    # SIGTERM -> graceful shutdown in app.worker.
+    stop_grace_period: 20s
+    restart: unless-stopped
+
+volumes:
+  db-data:
+  media-data:

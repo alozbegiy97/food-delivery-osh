@@ -1,0 +1,52 @@
+/*
+ * Design tokens (UI_UX_GUIDELINES §1): cream background, orange accents,
+ * graphite text. Components use these tokens through Tailwind utilities
+ * (e.g. `bg-cream-50`, `text-ink-900`) — no raw hex values in components.
+ * Text/background pairs are chosen for WCAG AA contrast.
+ */
+@theme {
+  --color-cream-50: #fffaf3;
+  --color-cream-100: #fbf1e3;
+  --color-surface: #ffffff;
+  --color-border: #eadfce;
+
+  --color-ink-900: #1f2328;
+  --color-ink-600: #4b525a;
+
+  --color-accent-50: #fff4eb;
+  --color-accent-100: #ffe4cc;
+  --color-accent-600: #ea580c;
+  --color-accent-700: #c2410c;
+  --color-accent-800: #9a3412;
+
+  --color-success-50: #ecfdf3;
+  --color-success-700: #15803d;
+  --color-warning-700: #a16207;
+  --color-danger-50: #fef2f2;
+  --color-danger-700: #b91c1c;
+
+  /*
+   * Fixed backgrounds for white text (DEC-156 p. 4, DEC-161 p. 7): the
+   * Telegram theme (features/telegram/theme.ts) never overrides them, so
+   * buttons and badges stay readable in the dark theme too.
+   */
+  --color-accent-strong: #9a3412;
+  --color-on-accent: #ffffff;
+  --color-danger-strong: #b91c1c;
+  --color-success-strong: #15803d;
+  --color-scrim: #1f2328;
+  --color-on-scrim: #ffffff;
+
+  /*
+   * Dark backdrop behind a dish image ("Печь", DEC-161 rev. 47): a radial
+   * light from plate-hi to plate. Decorative only, never a text background.
+   * The dark Telegram theme replaces both (theme.ts DARK_OVERRIDES).
+   */
+  --color-plate: #2a2f35;
+  --color-plate-hi: #3a4048;
+
+  --radius-card: 1rem;
+  --shadow-card: 0 1px 2px rgb(31 35 40 / 0.06), 0 8px 24px -12px rgb(31 35 40 / 0.18);
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+}

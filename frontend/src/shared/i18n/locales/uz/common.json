@@ -1,0 +1,1096 @@
+{
+  "app": {
+    "name": "Ovqat yetkazib berish — Oʻsh",
+    "skipToContent": "Asosiy qismga oʻtish"
+  },
+  "language": {
+    "label": "Interfeys tili",
+    "names": {
+      "ru": "Русский",
+      "ky": "Кыргызча",
+      "uz": "Oʻzbekcha"
+    }
+  },
+  "status": {
+    "title": "Tizim holati",
+    "description": "1-bosqichning texnik sahifasi: frontend va API aloqasini tekshirish.",
+    "loading": "API bilan aloqa tekshirilmoqda…",
+    "errorTitle": "API javob bermadi",
+    "errorDescription": "Backend ishlayotganini tekshiring va qayta urinib koʻring.",
+    "retry": "Qayta urinish",
+    "checking": "Tekshirilmoqda…",
+    "overall": "Umumiy holat",
+    "database": "Maʼlumotlar bazasi",
+    "postgis": "PostGIS",
+    "values": {
+      "ok": "Ishlayapti",
+      "degraded": "Qisman: PostGIS oʻrnatilmagan",
+      "notInstalled": "Oʻrnatilmagan"
+    }
+  },
+  "notFound": {
+    "title": "Sahifa topilmadi",
+    "description": "Bunday sahifa yoʻq yoki u koʻchirilgan.",
+    "backHome": "Bosh sahifaga"
+  },
+  "auth": {
+    "navLabel": "Kirish va roʻyxatdan oʻtish",
+    "pending": "Yuborilmoqda…",
+    "checkingSession": "Sessiya tekshirilmoqda…",
+    "backToLogin": "Kirishga qaytish",
+    "logout": "Chiqish",
+    "fields": {
+      "email": "Email",
+      "password": "Parol",
+      "fullName": "Ism",
+      "phoneOptional": "Telefon (ixtiyoriy)",
+      "newPassword": "Yangi parol",
+      "confirmPassword": "Parolni takrorlang",
+      "currentPassword": "Joriy parol"
+    },
+    "hints": {
+      "password": "8 dan 128 gacha belgi, kamida bitta harf va bitta raqam.",
+      "phone": "Format +996 XXX XX XX XX"
+    },
+    "login": {
+      "title": "Kirish",
+      "submit": "Kirish",
+      "forgot": "Parolni unutdingizmi?",
+      "toRegister": "Akkaunt yaratish"
+    },
+    "register": {
+      "title": "Roʻyxatdan oʻtish",
+      "submit": "Roʻyxatdan oʻtish",
+      "toLogin": "Akkauntingiz bormi? Kiring"
+    },
+    "forgot": {
+      "title": "Parolni tiklash",
+      "description": "Akkaunt roʻyxatdan oʻtgan email manzilini kiriting.",
+      "submit": "Havola yuborish",
+      "sent": "Agar akkaunt mavjud boʻlsa, parolni tiklash havolasi bilan xat yubordik."
+    },
+    "reset": {
+      "title": "Yangi parol",
+      "submit": "Parolni saqlash",
+      "done": "Parol oʻzgartirildi. Yangi parol bilan kiring.",
+      "requestNew": "Yangi havola soʻrash"
+    },
+    "change": {
+      "title": "Parolni oʻzgartirish",
+      "submit": "Parolni oʻzgartirish",
+      "required": "Davom etishdan oldin vaqtinchalik parolni oʻzgartiring.",
+      "done": "Parol oʻzgartirildi. Yangi parol bilan qayta kiring."
+    }
+  },
+  "account": {
+    "title": "Mening akkauntim",
+    "phone": "Telefon",
+    "roles": "Rollar",
+    "changePassword": "Parolni oʻzgartirish",
+    "roleNames": {
+      "customer": "Xaridor",
+      "admin": "Administrator",
+      "cook": "Oshpaz",
+      "courier": "Kuryer"
+    }
+  },
+  "validation": {
+    "required": "Maydonni toʻldiring",
+    "emailInvalid": "Email manzilini tekshiring",
+    "passwordLength": "Parol 8 dan 128 belgigacha boʻlishi kerak",
+    "passwordLetter": "Parolda kamida bitta harf boʻlishi kerak",
+    "passwordDigit": "Parolda kamida bitta raqam boʻlishi kerak",
+    "passwordsDiffer": "Parollar mos kelmadi",
+    "nameTooLong": "Ism 150 belgidan oshmasligi kerak",
+    "nameInvalid": "Ismda yaroqsiz belgilar bor",
+    "phoneInvalid": "Raqamni toʻliq kiriting: +996 va 9 ta raqam",
+    "phoneCannotRemove": "Telefonni almashtirish mumkin, lekin oʻchirib boʻlmaydi"
+  },
+  "errors": {
+    "codes": {
+      "default": "Nimadir notoʻgʻri ketdi. Qayta urinib koʻring.",
+      "NETWORK_ERROR": "Server bilan aloqa yoʻq. Ulanishni tekshiring.",
+      "INVALID_CREDENTIALS": "Email yoki parol notoʻgʻri",
+      "EMAIL_ALREADY_EXISTS": "Bu email allaqachon roʻyxatdan oʻtgan",
+      "CREDENTIALS_ALREADY_SET": "Email va parol allaqachon qoʻshilgan",
+      "VALIDATION_ERROR": "Kiritilgan maʼlumotlarni tekshiring",
+      "RATE_LIMITED": "Urinishlar juda koʻp. Biroz kutib, qayta urinib koʻring.",
+      "INVALID_OR_EXPIRED_TOKEN": "Havola yaroqsiz yoki muddati oʻtgan. Yangisini soʻrang.",
+      "CURRENT_PASSWORD_INVALID": "Joriy parol notoʻgʻri",
+      "UNAUTHORIZED": "Sessiya muddati tugadi. Qayta kiring.",
+      "INTERNAL_ERROR": "Server xatosi. Keyinroq urinib koʻring.",
+      "PAYMENT_REQUIRED": "Buyurtma hali toʻlanmagan: amal mavjud emas.",
+      "INVALID_STATUS_TRANSITION": "Bunday holat oʻzgarishi hozir mumkin emas. Sahifani yangilang.",
+      "CANCELLATION_NOT_ALLOWED": "Bekor qilish hozir mumkin emas yoki soʻrov allaqachon koʻrib chiqilgan.",
+      "ADMIN_ACCOUNT_PROTECTED": "Administrator hisoblari bu yerda boshqarilmaydi.",
+      "COURIER_HAS_ACTIVE_ASSIGNMENTS": "Kuryerning faol tayinlovlari bor.",
+      "INVALID_WORKING_HOURS": "Ish vaqtini tekshiring.",
+      "ZONE_OVERLAP": "Hudud boshqa faol hudud bilan kesishadi.",
+      "INVALID_GEOMETRY": "Hudud chegarasi notoʻgʻri.",
+      "FORBIDDEN": "Huquq yetarli emas.",
+      "NOT_FOUND": "Topilmadi. Sahifani yangilang.",
+      "COURIER_NOT_AVAILABLE": "Kuryer mavjud emas: buyurtma qabul qilmaydi, oʻchirilgan yoki chegaraga yetgan.",
+      "NO_COURIER_AVAILABLE": "Boʻsh kuryer yoʻq.",
+      "ASSIGNMENT_NOT_ACCEPTED": "Avval buyurtmani qabul qiling.",
+      "ASSIGNMENT_ALREADY_ACCEPTED": "Buyurtma qabul qilingan — voz kechib boʻlmaydi.",
+      "INVALID_TELEGRAM_AUTH": "Telegram orqali kirib boʻlmadi. Mini App'ni qayta oching.",
+      "TELEGRAM_DISABLED": "Telegram orqali kirish vaqtincha mavjud emas.",
+      "TELEGRAM_NOT_LINKED": "Bu Telegram hali akkauntga bogʻlanmagan.",
+      "TELEGRAM_ALREADY_LINKED": "Bu Telegram boshqa akkauntga bogʻlangan.",
+      "ACCOUNT_ALREADY_LINKED": "Bu akkaunt boshqa Telegram'ga bogʻlangan.",
+      "TELEGRAM_BUSY": "Soʻrov bajarilmoqda. Qayta urinib koʻring."
+    }
+  },
+  "common": {
+    "retry": "Qayta urinish"
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "menu": "Menyu",
+    "mainLabel": "Asosiy navigatsiya",
+    "footerLabel": "Pastki navigatsiya",
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish"
+  },
+  "money": {
+    "amount": "{{amount}} soʻm",
+    "from": "{{amount}} soʻmdan"
+  },
+  "home": {
+    "heroTitle": "Issiq pitsa va Oʻshning sevimli taomlari",
+    "heroText": "Oʻlcham, xamir va qoʻshimchalarni tanlang — siz xohlagandek tayyorlaymiz.",
+    "heroCta": "Menyuni koʻrish",
+    "closedTitle": "Restoran hozir yopiq",
+    "closedText": "Menyuni istalgan vaqtda koʻrish mumkin. Ish vaqti:",
+    "categoriesTitle": "Toifalar",
+    "popularTitle": "Mashhur",
+    "fromMenuTitle": "Menyumizdan",
+    "allMenu": "Butun menyu",
+    "benefitsTitle": "Nega biz bilan qulay",
+    "benefits": {
+      "delivery": {
+        "title": "Oʻsh boʻylab yetkazib berish",
+        "text": "Buyurtmani yetkazib berish hududidagi manzilga olib boramiz."
+      },
+      "pickup": {
+        "title": "Olib ketish",
+        "text": "Buyurtma tayyor boʻlganda uni oʻzingiz olib keting."
+      },
+      "custom": {
+        "title": "Siz yoqtirgan pitsa",
+        "text": "Oʻlcham, xamir va qoʻshimchalarni oʻzingiz tanlaysiz."
+      },
+      "languages": {
+        "title": "Uch til",
+        "text": "Menyu rus, qirgʻiz va oʻzbek tillarida."
+      }
+    }
+  },
+  "menu": {
+    "title": "Menyu",
+    "searchLabel": "Menyu boʻyicha qidirish",
+    "searchPlaceholder": "Taom qidirish",
+    "categoriesLabel": "Menyu toifalari",
+    "allCategories": "Hammasi",
+    "productsLabel": "Taomlar",
+    "found": "Topilgan taomlar: {{count}}",
+    "unavailable": "Mavjud emas",
+    "featured": "Xit",
+    "choose": "Tanlash",
+    "details": "Batafsil",
+    "emptyTitle": "Hech narsa topilmadi",
+    "emptyText": "Boshqa soʻrov yozing yoki boshqa toifani tanlang.",
+    "resetFilters": "Butun menyuni koʻrsatish",
+    "emptyCatalogTitle": "Menyu hozircha boʻsh",
+    "emptyCatalogText": "Tez orada bu yerda taomlar paydo boʻladi.",
+    "errorTitle": "Menyuni yuklab boʻlmadi",
+    "errorText": "Internet aloqasini tekshirib, qayta urinib koʻring.",
+    "paginationLabel": "Menyu sahifalari",
+    "previous": "Orqaga",
+    "next": "Oldinga",
+    "pageOf": "{{page}}-sahifa, jami {{pages}}"
+  },
+  "product": {
+    "back": "Menyuga qaytish",
+    "loading": "Taom yuklanmoqda…",
+    "size": "Oʻlcham",
+    "required": "Majburiy",
+    "optional": "Ixtiyoriy",
+    "rules": {
+      "chooseOne": "Bitta variantni tanlang",
+      "range": "{{min}} tadan {{max}} tagacha tanlang",
+      "upTo": "{{count}} tagacha tanlash mumkin",
+      "atLeast": "Kamida {{count}} ta tanlang",
+      "any": "Bir nechtasini tanlash mumkin"
+    },
+    "selectedOf": "{{max}} tadan {{count}} ta tanlandi",
+    "noChoice": "Kerak emas",
+    "free": "Bepul",
+    "optionUnavailable": "mavjud emas",
+    "limitReached": "Eng koʻp miqdor tanlandi. Boshqasini tanlash uchun bitta belgini olib tashlang.",
+    "decrease": "Miqdorni kamaytirish",
+    "increase": "Miqdorni oshirish",
+    "quantityOf": "Miqdor: {{name}}",
+    "summary": "Tanlov natijasi",
+    "breakdown": "Narx nimalardan iborat",
+    "base": "Taom",
+    "total": "Taxminiy narx",
+    "addToCart": "Savatga",
+    "priceNote": "Yakuniy summani restoran buyurtma rasmiylashtirilganda hisoblaydi.",
+    "completeChoice": "Majburiy tanlovlarni toʻldiring.",
+    "productUnavailable": "Bu taom hozir mavjud emas.",
+    "problems": {
+      "required": "«{{group}}» guruhidan variant tanlang.",
+      "tooFew": "«{{group}}» guruhida juda kam tanlangan.",
+      "tooMany": "«{{group}}» guruhida juda koʻp tanlangan.",
+      "unavailable": "«{{group}}» guruhida mavjud boʻlmagan variant tanlangan."
+    },
+    "notFoundTitle": "Taom topilmadi",
+    "notFoundText": "Ehtimol, u menyudan olib tashlangan.",
+    "errorTitle": "Taomni yuklab boʻlmadi",
+    "quantity": "Soni",
+    "instructions": "Taomga istaklar",
+    "instructionsPlaceholder": "Masalan: piyozsiz",
+    "instructionsHint": "Ixtiyoriy, {{max}} belgigacha.",
+    "adding": "Qoʻshilmoqda…",
+    "added": "Savatga qoʻshildi.",
+    "goToCart": "Savatga oʻtish",
+    "loginToAdd": "Taomni savatga qoʻshish uchun kiring — keyin shu sahifaga qaytasiz."
+  },
+  "restaurant": {
+    "openNow": "Ochiq",
+    "closedNow": "Yopiq",
+    "opensAt": "ochilamiz: {{when}}",
+    "hoursTitle": "Ish vaqti",
+    "contactsTitle": "Aloqa",
+    "dayOff": "Dam olish kuni",
+    "today": "bugun",
+    "address": "Manzil",
+    "phone": "Telefon",
+    "services": "Buyurtmani olish",
+    "delivery": "Yetkazib berish",
+    "pickup": "Olib ketish",
+    "noServices": "Hozir buyurtmalar qabul qilinmaydi",
+    "minOrder": "Buyurtmaning eng kam summasi",
+    "unavailable": "Restoran haqidagi maʼlumot vaqtincha mavjud emas.",
+    "weekdays": {
+      "0": "Dushanba",
+      "1": "Seshanba",
+      "2": "Chorshanba",
+      "3": "Payshanba",
+      "4": "Juma",
+      "5": "Shanba",
+      "6": "Yakshanba"
+    }
+  },
+  "admin": {
+    "title": "Boshqaruv",
+    "navLabel": "Boshqaruv boʻlimlari",
+    "navLink": "Boshqaruv",
+    "catalogGroup": "Menyu",
+    "sectionsButton": "Boʻlimlar",
+    "sections": {
+      "categories": "Kategoriyalar",
+      "products": "Taomlar",
+      "modifiers": "Qoʻshimchalar",
+      "dashboard": "Dashboard",
+      "orders": "Buyurtmalar",
+      "cancellations": "Bekor qilish soʻrovlari",
+      "kitchen": "Oshxona",
+      "staff": "Xodimlar",
+      "zones": "Yetkazib berish hududlari",
+      "settings": "Sozlamalar",
+      "couriers": "Kuryerlar"
+    },
+    "forbiddenTitle": "Ruxsat yoʻq",
+    "forbiddenText": "Bu boʻlim faqat administrator uchun.",
+    "cancel": "Bekor qilish",
+    "save": "Saqlash",
+    "create": "Yaratish",
+    "saving": "Saqlanmoqda…",
+    "saved": "Saqlandi",
+    "edit": "Oʻzgartirish",
+    "loading": "Yuklanmoqda…",
+    "loadError": "Maʼlumotlarni yuklab boʻlmadi",
+    "status": {
+      "active": "Koʻrsatiladi",
+      "hidden": "Yashirilgan",
+      "deleted": "Oʻchirilgan",
+      "onSale": "Sotuvda",
+      "notOnSale": "Sotilmaydi",
+      "featured": "Mashhur",
+      "categoryHidden": "Kategoriya yashirilgan"
+    },
+    "fields": {
+      "name": "Nomi",
+      "description": "Tavsif",
+      "category": "Kategoriya",
+      "categoryActive": "Kategoriyani menyuda koʻrsatish",
+      "sortOrder": "Tartib",
+      "slug": "Havoladagi manzil (slug)",
+      "onSale": "Sotuvda",
+      "featured": "Mashhur",
+      "sizeName": "Oʻlcham nomi",
+      "price": "Narxi, som",
+      "sku": "Artikul",
+      "sizeOnSale": "Oʻlcham sotuvda",
+      "position": "Tartib",
+      "groupName": "Guruh nomi",
+      "selectionType": "Qanday tanlanadi",
+      "required": "Majburiy tanlov",
+      "minSelections": "Kamida tanlash",
+      "maxSelections": "Koʻpi bilan tanlash",
+      "groupActive": "Guruh yoqilgan",
+      "extraName": "Qoʻshimcha nomi",
+      "extraPrice": "Qoʻshimcha narxi, som",
+      "maxQuantity": "Nechta olish mumkin",
+      "extraOnSale": "Qoʻshimcha sotuvda"
+    },
+    "hints": {
+      "sortOrder": "Kichik son — roʻyxatda yuqorida.",
+      "slug": "Lotin harflari, raqamlar va chiziqcha. Havolada ishlatiladi.",
+      "slugAuto": "Boʻsh qoldirsangiz boʻladi — ruscha nomdan yaratamiz.",
+      "categoryActive": "Yashirilgan kategoriya va uning taomlari xaridorlarga koʻrinmaydi.",
+      "onSale": "Taom vaqtincha tugagan boʻlsa, oʻchiring.",
+      "featured": "Taomni bosh sahifadagi tanlovda koʻrsatish.",
+      "price": "Masalan: 450 yoki 450.50",
+      "sku": "Ichki kod: lotin harflari, raqamlar, nuqta, chiziqcha.",
+      "requiredSingle": "Xaridor bitta variantni albatta tanlaydi.",
+      "minSelections": "0 — hech narsa tanlamasa ham boʻladi.",
+      "maxSelections": "Boʻsh — cheklovsiz.",
+      "groupActive": "Oʻchirilgan guruh xaridorlarga koʻrsatilmaydi.",
+      "extraPrice": "Asosiy narx; ayrim oʻlchamlar uchun taom kartochkasida oʻzgartirish mumkin.",
+      "maxQuantity": "1 dan 99 gacha."
+    },
+    "translations": {
+      "label": "Tillar",
+      "hint": "Ruscha majburiy. Qirgʻizcha va oʻzbekcha — ixtiyoriy; tarjima boʻlmasa, ruscha matn koʻrsatiladi."
+    },
+    "validation": {
+      "ruRequired": "Ruscha nomini kiriting",
+      "tooLong": "Matn juda uzun",
+      "money": "Summani kiriting, masalan 450 yoki 450.50",
+      "integer": "Butun son kiriting",
+      "sku": "Faqat lotin harflari, raqamlar, nuqta, chiziqcha va pastki chiziq",
+      "slug": "Faqat lotin harflari, raqamlar va chiziqcha",
+      "minOne": "Kamida 1",
+      "maxQuantity": "1 dan 99 gacha"
+    },
+    "errors": {
+      "slugTaken": "Bunday manzil (slug) band",
+      "skuTaken": "Bunday artikul ishlatilmoqda",
+      "singleMax": "Bitta tanlovli guruhda faqat bitta variant tanlanadi",
+      "minMax": "Eng kami eng koʻpidan katta boʻlmasligi kerak",
+      "groupNotLinked": "Bu qoʻshimchaning guruhi taomga ulanmagan",
+      "categoryMissing": "Kategoriya topilmadi",
+      "file": "Fayl mos emas: 5 MB gacha JPEG, PNG yoki WebP kerak"
+    },
+    "images": {
+      "title": "Rasmlar",
+      "intro": "Asosiy rasm menyuda va taom kartochkasida koʻrsatiladi.",
+      "none": "Hozircha rasm yoʻq.",
+      "primary": "Asosiy",
+      "delete": "Rasmni oʻchirish",
+      "deleteQuestion": "Bu rasmni oʻchirasizmi?",
+      "deleteConfirm": "Ha, oʻchirish",
+      "upload": "Rasm yuklash",
+      "uploadPrimary": "Yangi asosiy rasm yuklash",
+      "uploadExtra": "Yana rasm qoʻshish",
+      "uploadCategory": "Kategoriya rasmini yuklash",
+      "uploading": "Yuklanmoqda…",
+      "hint": "JPEG, PNG yoki WebP, 5 MB gacha.",
+      "wrongType": "JPEG, PNG yoki WebP faylini tanlang",
+      "tooBig": "Fayl 5 MB dan katta"
+    },
+    "categories": {
+      "intro": "Menyu boʻlimlari. Yashirilgan kategoriyalar xaridorlarga koʻrinmaydi.",
+      "add": "Kategoriya qoʻshish",
+      "newTitle": "Yangi kategoriya",
+      "emptyTitle": "Hozircha kategoriya yoʻq",
+      "emptyText": "Menyuning birinchi kategoriyasini yarating.",
+      "productsCount": "Taomlar: {{count}}",
+      "hide": "Yashirish",
+      "hideQuestion": "Kategoriyani taomlari bilan birga menyudan yashirasizmi?",
+      "hideConfirm": "Ha, yashirish",
+      "show": "Koʻrsatish"
+    },
+    "products": {
+      "intro": "Taomlar, oʻlchamlar, narxlar va rasmlar.",
+      "add": "Taom qoʻshish",
+      "allCategories": "Barcha kategoriyalar",
+      "search": "Qidiruv",
+      "searchPlaceholder": "Taom nomi",
+      "status": "Koʻrsatish",
+      "statusActive": "Amaldagi",
+      "statusDeleted": "Oʻchirilgan",
+      "statusAll": "Hammasi",
+      "emptyTitle": "Hech narsa topilmadi",
+      "emptyText": "Filtrlarni oʻzgartiring yoki taom qoʻshing.",
+      "total": "Topildi: {{count}}",
+      "variantsCount": "Oʻlchamlar: {{count}}"
+    },
+    "product": {
+      "back": "Taomlar roʻyxatiga",
+      "newTitle": "Yangi taom",
+      "editTitle": "Taomni tahrirlash",
+      "mainTitle": "Asosiy",
+      "chooseCategory": "Kategoriyani tanlang",
+      "firstSizeTitle": "Birinchi oʻlcham va narx",
+      "firstSizeIntro": "Har bir taomning kamida bitta oʻlchami bor. Boshqa oʻlchamlarni yaratgandan keyin qoʻshish mumkin.",
+      "sizesTitle": "Oʻlchamlar va narxlar",
+      "sizesIntro": "Buyurtmalar tarixi buzilmasligi uchun oʻlchamlar oʻchirilmaydi; keraksiz oʻlchamni sotuvdan olib qoʻying.",
+      "addSize": "Oʻlcham qoʻshish",
+      "newSize": "Yangi oʻlcham",
+      "groupsTitle": "Taomga qoʻshimchalar",
+      "groupsIntro": "Bu taomga tanlash mumkin boʻlgan qoʻshimcha guruhlarini belgilang.",
+      "noGroups": "Hozircha qoʻshimcha guruhlari yoʻq. Ularni «Qoʻshimchalar» boʻlimida yarating.",
+      "pricesTitle": "Oʻlchamlar boʻyicha qoʻshimcha narxlari",
+      "pricesIntro": "Biror oʻlcham uchun qoʻshimcha narxi boshqacha boʻlsa, shu yerda koʻrsating.",
+      "pricesHint": "Boʻsh katakda qoʻshimchaning asosiy narxi amal qiladi.",
+      "extra": "Qoʻshimcha",
+      "basePrice": "Asosiy narx",
+      "priceFor": "«{{size}}» oʻlchami uchun «{{extra}}» narxi",
+      "deleteTitle": "Oʻchirish",
+      "deleteIntro": "Taom menyudan va savatlardan yoʻqoladi, lekin buyurtmalar tarixida qoladi.",
+      "delete": "Taomni oʻchirish",
+      "deleteQuestion": "Taomni menyudan oʻchirasizmi?",
+      "deleteConfirm": "Ha, oʻchirish",
+      "deletedNote": "Bu taom oʻchirilgan va menyuda koʻrsatilmaydi."
+    },
+    "groups": {
+      "intro": "Qoʻshimcha guruhlari: souslar, pishloq, toʻldirmalar va h. k.",
+      "add": "Guruh qoʻshish",
+      "newTitle": "Yangi qoʻshimcha guruhi",
+      "emptyTitle": "Hozircha qoʻshimcha guruhlari yoʻq",
+      "emptyText": "Guruh yarating, soʻng unga variantlar qoʻshing.",
+      "single": "Bitta variant",
+      "multiple": "Bir nechta variant",
+      "ruleSingleRequired": "Bitta variant, majburiy",
+      "ruleSingleOptional": "Bitta variant, ixtiyoriy",
+      "ruleMultiple": "Bir nechta: {{min}} dan {{max}} gacha",
+      "ruleMultipleUnlimited": "Bir nechta: {{min}} dan, cheklovsiz",
+      "optionsCount": "Variantlar: {{count}}",
+      "productsCount": "Taomlar: {{count}}",
+      "optionsLabel": "Guruh variantlari",
+      "noOptions": "Guruhda hozircha variant yoʻq.",
+      "addOption": "Variant qoʻshish",
+      "upTo": "{{count}} tagacha"
+    },
+    "kitchenLink": "Oshxona",
+    "workGroup": "Ish",
+    "restaurantGroup": "Restoran",
+    "dashboard": {
+      "period": "Davr: {{from}} — {{to}} (Asia/Bishkek)",
+      "dateFrom": "Sanadan",
+      "dateTo": "Sanagacha",
+      "lastWeek": "Oxirgi 7 kun",
+      "orders": "Buyurtmalar",
+      "ordersHint": "Davrda yaratilganlar; toʻlov muddati oʻtib bekor qilinganlar kirmaydi.",
+      "revenue": "Tushum",
+      "revenueHint": "Yakunlangan buyurtmalar summasi, yakunlangan sana boʻyicha.",
+      "average": "Oʻrtacha chek",
+      "averageHint": "Tushum / davrdagi yakunlangan buyurtmalar soni.",
+      "active": "Faol buyurtmalar (hozir)",
+      "activeHint": "Tasdiqlangan, tayyorlanmoqda, tayyor, yoʻlda — davrga bogʻliq emas.",
+      "chartTitle": "Grafik",
+      "chartHint": "Chiziqlar turli sanalar boʻyicha hisoblanadi: yaratilgan va yakunlangan.",
+      "chartLabel": "Kunlar boʻyicha buyurtmalar va tushum",
+      "date": "Sana",
+      "ordersLine": "Yaratilgan buyurtmalar (yaratilgan sana)",
+      "revenueLine": "Tushum, som (yakunlangan sana)",
+      "topTitle": "Mashhur mahsulotlar",
+      "topHint": "Davrdagi yakunlangan buyurtmalardagi soni boʻyicha top-10.",
+      "topEmpty": "Davrda yakunlangan buyurtma yoʻq.",
+      "pieces": "{{count}} dona"
+    },
+    "orders": {
+      "intro": "Ish navbati. Karta bilan toʻlanmagan buyurtmalar faqat alohida filtr bilan koʻrinadi.",
+      "status": "Holat",
+      "allStatuses": "Barcha holatlar",
+      "type": "Turi",
+      "allTypes": "Yetkazib berish va olib ketish",
+      "number": "Buyurtma raqami",
+      "awaitingFilter": "Karta toʻlovini kutmoqda",
+      "awaitingNote": "Buyurtma xaridorning demo toʻlovini kutmoqda: toʻlovgacha amallar yoʻq.",
+      "awaitingBadge": "Toʻlov kutilmoqda",
+      "cancellationPending": "Bekor qilish soʻrovi",
+      "emptyTitle": "Buyurtma yoʻq",
+      "emptyText": "Filtrlarni oʻzgartiring yoki yangi buyurtmalarni kuting.",
+      "back": "Buyurtmalarga",
+      "actionsTitle": "Amallar",
+      "noActions": "Bu holat uchun amal yoʻq.",
+      "reason": "Sabab (majburiy)",
+      "confirmAction": "Ha: {{action}}",
+      "customer": "Xaridor",
+      "override": "Administrator aralashuvi",
+      "toRequests": "Bekor qilish soʻrovlarini ochish",
+      "actions": {
+        "confirmed": "Tasdiqlash",
+        "preparing": "Tayyorlashni boshlash",
+        "ready_for_pickup": "Tayyor",
+        "completed": "Yakunlash (berildi)",
+        "rejected": "Rad etish",
+        "cancelled": "Buyurtmani bekor qilish"
+      },
+      "overrideActions": {
+        "out_for_delivery": "Kuryerga topshirildi deb belgilash",
+        "completed": "Yetkazildi deb belgilash"
+      },
+      "overrideWarning": "Bu kuryer oʻrniga administrator aralashuvi. Amal tarixga sizning nomingizdan yoziladi.",
+      "overrideComment": "Izoh (majburiy)",
+      "deliveredAt": "{{when}} yetkazildi",
+      "needsCourier": "Kuryer kerak",
+      "courierOf": "kuryer: {{name}}"
+    },
+    "requests": {
+      "intro": "Xaridor buyurtmani bekor qilishni soʻraydi — qarorni restoran qabul qiladi.",
+      "filter": {
+        "pending": "Kutilmoqda",
+        "approved": "Maʼqullangan",
+        "rejected": "Rad etilgan",
+        "all": "Hammasi"
+      },
+      "approve": "Maʼqullash",
+      "approveQuestion": "Xaridor soʻrovi boʻyicha buyurtma bekor qilinsinmi?",
+      "approveConfirm": "Ha, bekor qilish",
+      "reject": "Rad etish",
+      "answer": "Xaridorga javob (majburiy)",
+      "emptyTitle": "Soʻrov yoʻq",
+      "emptyText": "Yangi soʻrovlar shu yerda avtomatik paydo boʻladi."
+    },
+    "kitchen": {
+      "intro": "Tayyorlanadigan buyurtmalar: avval tasdiqlanganlar birinchi. Har 10 soniyada yangilanadi.",
+      "confirmed": "{{when}} tasdiqlangan",
+      "started": "{{when}} boshlangan",
+      "wishes": "Istaklar",
+      "start": "Tayyorlashni boshlash",
+      "ready": "Tayyor",
+      "emptyTitle": "Navbat boʻsh",
+      "emptyText": "Tasdiqlangan buyurtmalar shu yerda paydo boʻladi."
+    },
+    "staff": {
+      "intro": "Oshpazlar va kuryerlar. Administratorlar faqat serverdagi buyruq bilan yaratiladi.",
+      "add": "Xodim qoʻshish",
+      "newTitle": "Yangi xodim",
+      "fullName": "Ism",
+      "email": "Email (login)",
+      "phone": "Telefon (ixtiyoriy)",
+      "temporaryPassword": "Vaqtinchalik parol",
+      "passwordHint": "8–128 belgi, kamida bitta harf va bitta raqam. Birinchi kirishda xodim parolni almashtiradi.",
+      "roles": "Rollar",
+      "role": {
+        "cook": "Oshpaz",
+        "courier": "Kuryer",
+        "admin": "Administrator",
+        "customer": "Xaridor"
+      },
+      "roleRequired": "Kamida bitta rolni tanlang",
+      "createNote": "Vaqtinchalik parolni xodimga shaxsan bering.",
+      "active": "Faol",
+      "inactive": "Oʻchirilgan",
+      "mustChange": "Kirishda parolni almashtiradi",
+      "saveRoles": "Rollarni saqlash",
+      "deactivate": "Oʻchirish",
+      "deactivateQuestion": "Xodimni oʻchirib, barcha seanslarini yakunlaysizmi?",
+      "deactivateConfirm": "Ha, oʻchirish",
+      "reactivate": "Qayta yoqish",
+      "adminProtected": "Administrator: bu yerda yoqish va oʻchirish mavjud emas.",
+      "emptyTitle": "Hozircha xodim yoʻq",
+      "emptyText": "Oshpaz yoki kuryer qoʻshing."
+    },
+    "settings": {
+      "intro": "Restoran maʼlumotlari, eng kam summa, olish usullari va ish vaqti.",
+      "title": "Restoran",
+      "name": "Nomi",
+      "phone": "Telefon",
+      "address": "Manzil",
+      "minOrder": "Buyurtmaning eng kam summasi, som",
+      "latitude": "Kenglik",
+      "longitude": "Uzunlik",
+      "delivery": "Yetkazib berish mavjud",
+      "pickup": "Olib ketish mavjud",
+      "timezone": "Vaqt mintaqasi: {{tz}} (oʻzgarmaydi)",
+      "pairRequired": "Kenglik va uzunlik birga koʻrsatiladi",
+      "badLatitude": "Kenglik -90 dan 90 gacha, verguldan keyin 7 belgigacha",
+      "badLongitude": "Uzunlik -180 dan 180 gacha, verguldan keyin 7 belgigacha"
+    },
+    "hours": {
+      "title": "Ish vaqti",
+      "intro": "Haftaning har bir kuni uchun bitta oraliq (Asia/Bishkek).",
+      "day": "Kun",
+      "closed": "Dam olish",
+      "opens": "Ochilish",
+      "closes": "Yopilish",
+      "closedOf": "{{day}}: dam olish",
+      "opensOf": "{{day}}: ochilish",
+      "closesOf": "{{day}}: yopilish",
+      "overnightHint": "Agar yopilish ochilishdan oldin boʻlsa, oraliq yarim tun orqali oʻtadi va shu kunga tegishli.",
+      "problems": {
+        "each_weekday_once": "Aniq 7 kun kerak, har bir kun bir marta.",
+        "times_required": "Ochilish va yopilish vaqtini koʻrsating.",
+        "same_times": "Ochilish va yopilish bir xil boʻlmasligi kerak.",
+        "overnight_overlaps_next_day": "Tungi oraliq keyingi kun vaqtiga oʻtib ketadi."
+      }
+    },
+    "zones": {
+      "intro": "Hududlar xaritada chiziladi; kesishuv va toʻgʻrilikni server tekshiradi.",
+      "add": "Hudud qoʻshish",
+      "newTitle": "Yangi hudud",
+      "name": "Nomi",
+      "description": "Tavsif",
+      "fee": "Yetkazib berish narxi, som",
+      "minimum": "Eng kam summa, som",
+      "minimumHint": "0 — restoranning umumiy eng kam summasi amal qiladi.",
+      "active": "Hudud faol",
+      "activeHint": "Faol hududlar maydon boʻyicha kesishmasligi kerak.",
+      "isActive": "Faol",
+      "isInactive": "Oʻchirilgan",
+      "deactivate": "Hududni oʻchirish",
+      "deactivateQuestion": "Hudud oʻchirilsinmi? U oʻchirib tashlanmaydi.",
+      "deactivateConfirm": "Ha, oʻchirish",
+      "drawFirst": "Xaritada hudud chegarasini chizing.",
+      "mapLabel": "Yetkazib berish hududlari xaritasi",
+      "mapHint": "Chapdagi vositalar: koʻpburchak, toʻrtburchak, tahrirlash va oʻchirish. Boshqa hududlar kontur bilan koʻrsatilgan.",
+      "overlapWith": "Kesishadi",
+      "reason": "Sabab",
+      "emptyTitle": "Hudud yoʻq",
+      "emptyText": "Birinchi yetkazib berish hududini qoʻshing."
+    },
+    "couriers": {
+      "intro": "Kuryerlarning mavjudligi, bir vaqtdagi buyurtmalar chegarasi va joriy yuklamasi.",
+      "load": "Buyurtmalar: {{active}} / {{limit}}",
+      "available": "Buyurtma qabul qiladi",
+      "limit": "Buyurtmalar chegarasi",
+      "limitRange": "{{min}} dan {{max}} gacha son kiriting.",
+      "limitHint": "Bir vaqtda {{min}} dan {{max}} gacha buyurtma.",
+      "limitBelowActive": "Chegara joriy buyurtmalardan kam: ular kuryerda qoladi, u boʻshamaguncha yangilari tayinlanmaydi.",
+      "emptyTitle": "Kuryer yoʻq",
+      "emptyText": "«Xodimlar» boʻlimida xodimga «Kuryer» rolini bering."
+    },
+    "assign": {
+      "title": "Kuryer",
+      "needsCourier": "Kuryer kerak: buyurtma tayinlanmagan.",
+      "accepted": "Qabul qildi",
+      "notAccepted": "Qabul qilmagan",
+      "type": {
+        "manual": "qoʻlda",
+        "automatic": "avtomatik"
+      },
+      "none": "Kuryer tayinlanmagan.",
+      "chooseLabel": "Kuryer tayinlash",
+      "reassignLabel": "Kuryerni almashtirish",
+      "choose": "Kuryerni tanlang",
+      "option": "{{name}} ({{active}}/{{limit}})",
+      "unavailable": "buyurtma qabul qilmaydi",
+      "assign": "Tayinlash",
+      "reassign": "Qayta tayinlash",
+      "auto": "Avtomatik tayinlash",
+      "noCourier": "Boʻsh kuryer yoʻq — kuryerni qoʻlda tanlang.",
+      "history": "Oldingi tayinlovlar",
+      "status": {
+        "active": "faol",
+        "completed": "yetkazdi",
+        "cancelled": "olib tashlandi",
+        "declined": "voz kechdi"
+      }
+    }
+  },
+  "cart": {
+    "title": "Savat",
+    "linkLabel": "Savat, mahsulotlar: {{count}}",
+    "loading": "Savat yuklanmoqda…",
+    "errorTitle": "Savatni yuklab boʻlmadi",
+    "emptyTitle": "Savat boʻsh",
+    "emptyText": "Menyudan taom tanlang — ular shu yerda paydo boʻladi.",
+    "toMenu": "Menyuga oʻtish",
+    "staffTitle": "Savat mavjud emas",
+    "staffOnly": "Savat faqat xaridorlar uchun.",
+    "linesLabel": "Savatdagi pozitsiyalar",
+    "summary": "Savat yakuni",
+    "itemsCount": "Mahsulotlar",
+    "subtotal": "Summa",
+    "perUnit": "1 donasi:",
+    "instructions": "Istaklar",
+    "addInstructions": "Istak qoʻshish",
+    "editInstructions": "Istakni oʻzgartirish",
+    "mergeHint": "Oʻzgartirgandan keyin pozitsiya boshqa xuddi shunday pozitsiyaga mos kelsa, ular birlashtiriladi.",
+    "save": "Saqlash",
+    "saving": "Saqlanmoqda…",
+    "cancel": "Bekor qilish",
+    "remove": "Oʻchirish",
+    "removeLabel": "«{{name}}»ni savatdan oʻchirish",
+    "quantityOf": "Soni: {{name}}",
+    "clear": "Savatni tozalash",
+    "clearQuestion": "Savatdagi barcha pozitsiyalarni oʻchirasizmi?",
+    "clearConfirm": "Ha, tozalash",
+    "lineUnavailable": "Bu pozitsiyani hozir buyurtma qilib boʻlmaydi",
+    "fixIssues": "Mavjud boʻlmagan pozitsiyalarni oʻchiring — ular summaga kirmaydi va buyurtma berishga xalaqit beradi.",
+    "checkout": "Buyurtma berish",
+    "serverPrices": "Narxlar va summa server tomonidan hisoblangan.",
+    "issues": {
+      "default": "Pozitsiya mavjud emas.",
+      "PRODUCT_UNAVAILABLE": "Taom hozir mavjud emas.",
+      "VARIANT_UNAVAILABLE": "Bu oʻlcham hozir mavjud emas.",
+      "MODIFIER_UNAVAILABLE": "«{{name}}» qoʻshimchasi mavjud emas.",
+      "MODIFIER_QUANTITY_EXCEEDED": "«{{name}}» — {{limit}} donadan oshmaydi.",
+      "GROUP_REQUIRED": "«{{group}}» guruhidan variant tanlang.",
+      "GROUP_MIN_SELECTIONS": "«{{group}}» guruhidan kamida {{limit}} ta tanlang.",
+      "GROUP_MAX_SELECTIONS": "«{{group}}» guruhidan koʻpi bilan {{limit}} ta tanlash mumkin."
+    },
+    "errors": {
+      "ITEM_UNAVAILABLE": "Qoʻshib boʻlmadi: tanlanganlardan biri mavjud emas.",
+      "MODIFIER_CONSTRAINT_VIOLATION": "Qoʻshib boʻlmadi: qoʻshimchalar tanlovini tekshiring.",
+      "tooManyLines": "Savatda 50 tadan ortiq turli pozitsiya boʻlishi mumkin emas.",
+      "lineQuantity": "Bitta pozitsiyada 99 donadan oshmaydi.",
+      "lineGone": "Bu pozitsiya allaqachon oʻchirilgan. Savatni yangilang."
+    }
+  },
+  "checkout": {
+    "title": "Buyurtma berish",
+    "loading": "Yuklanmoqda…",
+    "emptyTitle": "Savat boʻsh",
+    "emptyText": "Buyurtma berish uchun menyudan taom qoʻshing.",
+    "backToCart": "Savatga qaytish",
+    "summary": "Sizning buyurtmangiz",
+    "place": "Buyurtmani tasdiqlash",
+    "placing": "Buyurtma berilmoqda…",
+    "confirmNewTotal": "Yangi summani tasdiqlash",
+    "placeNote": "Buyurtma server javob bergandan keyingina yaratiladi. Qayta bosish ikkinchi buyurtmani yaratmaydi.",
+    "priceChangedConfirm": "Narxlar oʻzgardi, summa qayta hisoblandi. Tekshirib, buyurtmani yana bir bor tasdiqlang.",
+    "method": {
+      "title": "Olish usuli",
+      "delivery": "Yetkazib berish",
+      "pickup": "Olib ketish",
+      "pickupAt": "Olib ketish: {{address}}",
+      "disabled": "Hozir mavjud emas"
+    },
+    "address": {
+      "title": "Yetkazib berish manzili",
+      "new": "Yangi manzil"
+    },
+    "map": {
+      "label": "Xarita: yetkazib berish nuqtasini belgilash uchun bosing",
+      "hint": "Yetkazib berish nuqtasini belgilash uchun xaritani bosing. Manzilni quyida matn bilan kiriting.",
+      "picked": "Nuqta belgilandi: {{lat}}, {{lng}}. Oʻzgartirish uchun boshqa joyni bosing."
+    },
+    "fields": {
+      "address_text": "Manzil (koʻcha, uy)",
+      "entrance": "Podyezd",
+      "floor": "Qavat",
+      "apartment": "Xonadon",
+      "address_comment": "Kuryer uchun izoh",
+      "save_address": "Manzilni keyingi buyurtmalar uchun saqlash",
+      "label": "Manzil nomi",
+      "customer_name": "Ism",
+      "customer_phone": "Telefon",
+      "comment": "Buyurtmaga izoh",
+      "payment_method_code": "Toʻlov usuli",
+      "address_id": "Manzil",
+      "address": "Manzil",
+      "expected_total": "Summa"
+    },
+    "hints": {
+      "addressComment": "Masalan: domofon 12, kod 345",
+      "label": "Masalan: Uy"
+    },
+    "contacts": {
+      "title": "Aloqa"
+    },
+    "payment": {
+      "title": "Toʻlov",
+      "methods": {
+        "cash": "Naqd pul",
+        "mock_card": "Karta (demo)"
+      },
+      "hints": {
+        "cash": "Buyurtmani olganda toʻlanadi",
+        "mock_card": "Namoyish toʻlovi: haqiqiy pul yechilmaydi"
+      },
+      "loadError": "Toʻlov usullarini yuklab boʻlmadi. Sahifani yangilang."
+    },
+    "quote": {
+      "loading": "Narx hisoblanmoqda…",
+      "waiting": "Narxni hisoblash uchun manzilni tanlang.",
+      "failed": "Narxni hisoblab boʻlmadi. Yana urinib koʻring.",
+      "needPoint": "Xaritada nuqtani belgilang — shunda yetkazib berish hududini tekshirib, narxni hisoblaymiz.",
+      "items": "Mahsulotlar ({{count}} dona)",
+      "delivery": "Yetkazib berish",
+      "minimum": "Buyurtmaning eng kam summasi",
+      "total": "Jami",
+      "toCart": "Savatga oʻtish",
+      "serverNote": "Narx server tomonidan hisoblangan."
+    },
+    "problems": {
+      "default": "Hozir buyurtma berib boʻlmaydi.",
+      "CART_EMPTY": "Savat boʻsh.",
+      "ITEM_UNAVAILABLE": "Savatdagi baʼzi pozitsiyalar hozir mavjud emas — ularni savatdan oʻchiring.",
+      "MODIFIER_CONSTRAINT_VIOLATION": "Baʼzi pozitsiyalarda qoʻshimchalarni tanlash qoidalari oʻzgardi — savatda tuzating.",
+      "RESTAURANT_CLOSED": "Restoran hozir yopiq.",
+      "RESTAURANT_CLOSED_UNTIL": "Restoran hozir yopiq. {{when}} ochiladi.",
+      "DELIVERY_DISABLED": "Yetkazib berish hozir mavjud emas. Olib ketishni tanlashingiz mumkin.",
+      "PICKUP_DISABLED": "Olib ketish hozir mavjud emas.",
+      "OUT_OF_DELIVERY_ZONE": "Bu manzil yetkazib berish hududidan tashqarida. Boshqa manzil yoki olib ketishni tanlang.",
+      "MIN_ORDER_NOT_REACHED": "Buyurtmaning eng kam summasi — {{min}}, hozir savatda {{subtotal}}."
+    },
+    "errors": {
+      "PRICE_CHANGED": "Buyurtma summasi oʻzgardi: endi {{total}}.",
+      "IDEMPOTENCY_KEY_CONFLICT": "Buyurtma boshqa maʼlumotlar bilan yuborilgan. Sahifani yangilang.",
+      "IDEMPOTENCY_IN_PROGRESS": "Buyurtma hali qayta ishlanmoqda. Kuting va yana bosing.",
+      "NOT_FOUND": "Tanlangan manzil topilmadi. Boshqasini tanlang.",
+      "VALIDATION_ERROR": "Buyurtma maʼlumotlarini tekshiring.",
+      "checkFields": "Tekshiring: {{fields}}."
+    },
+    "validation": {
+      "tooLong": "Matn juda uzun",
+      "chooseAddress": "Manzilni tanlang"
+    }
+  },
+  "orders": {
+    "navLink": "Buyurtmalarim",
+    "title": "Buyurtmalarim",
+    "loading": "Buyurtmalar yuklanmoqda…",
+    "errorTitle": "Buyurtmalarni yuklab boʻlmadi",
+    "emptyTitle": "Hozircha buyurtma yoʻq",
+    "emptyText": "Menyudan birinchi buyurtmangizni bering.",
+    "listLabel": "Buyurtmalar roʻyxati",
+    "pagesLabel": "Buyurtmalar sahifalari",
+    "prev": "Orqaga",
+    "next": "Keyingi",
+    "page": "{{pages}} sahifadan {{page}}-sahifa",
+    "itemsCount": "{{count}} dona",
+    "back": "Barcha buyurtmalar",
+    "number": "Buyurtma {{number}}",
+    "placedNote": "Buyurtma qabul qilindi va restoran tasdigʻini kutmoqda. Sahifa avtomatik yangilanadi.",
+    "items": "Buyurtma tarkibi",
+    "history": "Holatlar tarixi",
+    "summary": "Buyurtma yakuni",
+    "subtotal": "Mahsulotlar",
+    "payment": "Toʻlov: {{method}} — {{status}}",
+    "entrance": "podyezd {{value}}",
+    "floor": "{{value}}-qavat",
+    "apartment": "xonadon {{value}}",
+    "notFoundTitle": "Buyurtma topilmadi",
+    "notFoundText": "Havola notoʻgʻri boʻlishi mumkin.",
+    "deliveryType": {
+      "delivery": "Yetkazib berish",
+      "pickup": "Olib ketish"
+    },
+    "status": {
+      "pending": "Tasdiqlashni kutmoqda",
+      "confirmed": "Tasdiqlandi",
+      "preparing": "Tayyorlanmoqda",
+      "ready_for_pickup": "Tayyor",
+      "out_for_delivery": "Kuryerga berildi",
+      "completed": "Yakunlandi",
+      "rejected": "Rad etildi",
+      "cancelled": "Bekor qilindi"
+    },
+    "paymentMethod": {
+      "cash": "naqd pul",
+      "mock_card": "karta (demo)"
+    },
+    "paymentStatus": {
+      "pending": "olganda toʻlanadi",
+      "succeeded": "toʻlandi",
+      "failed": "toʻlov xatosi",
+      "refunded": "qaytarildi",
+      "cancelled": "bekor qilindi",
+      "none": "maʼlumot yoʻq"
+    },
+    "cancel": {
+      "title": "Buyurtmani bekor qilish",
+      "open": "Buyurtmani bekor qilishni soʻrash",
+      "reason": "Sabab",
+      "hint": "500 belgigacha. Qarorni restoran qabul qiladi.",
+      "send": "Soʻrov yuborish",
+      "sending": "Yuborilmoqda…",
+      "notAllowed": "Bu holatda bekor qilishni soʻrab boʻlmaydi.",
+      "note": "Buyurtmani oʻzingiz bekor qila olmaysiz — restoran soʻrovni koʻrib chiqadi.",
+      "yourReason": "Sabab",
+      "answer": "Restoran javobi",
+      "status": {
+        "pending": "Soʻrov koʻrib chiqilishini kutmoqda",
+        "approved": "Soʻrov maʼqullandi",
+        "rejected": "Soʻrov rad etildi"
+      },
+      "errors": {
+        "CANCELLATION_NOT_ALLOWED": "Bu holatda bekor qilishni soʻrab boʻlmaydi.",
+        "CANCELLATION_REQUEST_PENDING": "Bekor qilish soʻrovi koʻrib chiqilishini kutmoqda.",
+        "VALIDATION_ERROR": "Sababni kiriting (500 belgigacha)."
+      }
+    },
+    "awaitingPayment": "Buyurtma {{when}} gacha namoyish toʻlovini kutmoqda.",
+    "payNow": "Toʻlash",
+    "cancelReason": {
+      "customer_request": "Buyurtma sizning soʻrovingiz bilan bekor qilindi.",
+      "admin_decision": "Buyurtmani restoran bekor qildi.",
+      "payment_timeout": "Buyurtma bekor qilindi: toʻlov oʻz vaqtida kelmadi."
+    }
+  },
+  "payments": {
+    "title": "Buyurtmani toʻlash",
+    "toOrder": "Buyurtmaga",
+    "demoWarning": "Bu namoyish toʻlovi: haqiqiy pul yechilmaydi, karta maʼlumotlari kerak emas.",
+    "summary": "Summa va toʻlov muddati",
+    "amount": "Toʻlovga",
+    "statusLabel": "Toʻlov holati",
+    "dueLabel": "Toʻlov muddati",
+    "left": "{{time}} qoldi",
+    "paid": "Toʻlov oʻtdi.",
+    "paidNext": "Buyurtma restoran tasdigʻini kutmoqda.",
+    "cancelledTimeout": "Buyurtma bekor qilindi: toʻlov oʻz vaqtida kelmadi.",
+    "cancelled": "Buyurtma bekor qilindi, toʻlov mumkin emas.",
+    "expired": "Toʻlov muddati tugadi. Buyurtma avtomatik bekor qilinadi.",
+    "failed": "Toʻlov oʻtmadi. Yana urinib koʻrishingiz mumkin — bu yangi urinish boʻladi.",
+    "processing": "Qayta ishlanmoqda…",
+    "paySuccess": "Muvaffaqiyatli toʻlash",
+    "payFailure": "Xatoni taqlid qilish",
+    "noCardData": "Bu yerda karta raqami, CVV va muddati uchun maydonlar yoʻq: bu taqlid.",
+    "attemptsTitle": "Toʻlov urinishlari",
+    "attemptsLabel": "Toʻlov urinishlari",
+    "attempt": "{{number}}-urinish",
+    "notCardTitle": "Bu buyurtma naqd pul bilan toʻlanadi",
+    "notCardText": "Buyurtmani olganda toʻlanadi.",
+    "status": {
+      "pending": "toʻlov kutilmoqda",
+      "succeeded": "toʻlandi",
+      "failed": "xato",
+      "refunded": "qaytarildi",
+      "cancelled": "bekor qilindi"
+    },
+    "errors": {
+      "PAYMENT_NOT_ALLOWED": "Hozir toʻlab boʻlmaydi: muddat tugagan, buyurtma bekor qilingan yoki allaqachon toʻlangan.",
+      "NOT_FOUND": "Toʻlov urinishi topilmadi. Sahifani yangilang.",
+      "NETWORK_ERROR": "Server bilan aloqa yoʻq. Yana bosing — qayta soʻrov ikki marta toʻlatmaydi."
+    }
+  },
+  "courier": {
+    "title": "Kuryer kabineti",
+    "navLabel": "Kuryer boʻlimlari",
+    "navLink": "Kuryer kabineti",
+    "tabs": {
+      "active": "Mening buyurtmalarim",
+      "history": "Tarix"
+    },
+    "availabilitySwitch": "Yangi buyurtmalarni qabul qilaman",
+    "availabilityHint": "Yangi buyurtma ola olmasangiz, oʻchiring. Joriy buyurtmalar sizda qoladi.",
+    "load": "Faol buyurtmalar: {{active}} / {{limit}}",
+    "notice": {
+      "delivered": "Buyurtma yetkazildi deb belgilandi.",
+      "declined": "Siz buyurtmadan voz kechdingiz."
+    },
+    "emptyTitle": "Tayinlangan buyurtma yoʻq",
+    "emptyText": "Yangi buyurtmalar shu yerda avtomatik paydo boʻladi.",
+    "toCollect": "Olish kerak",
+    "paidOnline": "Karta bilan toʻlangan",
+    "accepted": "Qabul qilindi",
+    "waitingAccept": "Qabul qilish kutilmoqda",
+    "back": "Mening buyurtmalarimga",
+    "goneTitle": "Buyurtma endi sizga tayinlanmagan",
+    "goneText": "U boshqa kuryerga berildi, bekor qilindi yoki yakunlandi.",
+    "payment": "Toʻlov",
+    "address": "Yetkazib berish manzili",
+    "addressComment": "Kuryer uchun izoh",
+    "openMap": "Xaritada ochish",
+    "customer": "Xaridor",
+    "accept": "Buyurtmani qabul qilish",
+    "pickUp": "Buyurtmani oldim",
+    "pickUpNeedsAccept": "Avval buyurtmani qabul qiling.",
+    "pickUpNeedsReady": "Buyurtma hali tayyorlanmoqda — tayyor boʻlganda tugma faollashadi.",
+    "deliver": "Yetkazildi",
+    "deliverQuestion": "Buyurtma xaridorga topshirilganini tasdiqlang.",
+    "deliverQuestionCash": "Buyurtma topshirilgani va olinganini tasdiqlang:",
+    "deliverConfirm": "Ha, yetkazildi",
+    "decline": "Voz kechish",
+    "declineQuestion": "Buyurtmadan voz kechasizmi? Administrator boshqa kuryerni tayinlaydi.",
+    "declineReason": "Sabab (ixtiyoriy)",
+    "declineConfirm": "Ha, voz kechish",
+    "method": {
+      "cash": "naqd",
+      "mock_card": "karta (demo)"
+    },
+    "assignment": {
+      "completed": "Yetkazildi",
+      "declined": "Voz kechish"
+    },
+    "historyEmptyTitle": "Tarix boʻsh",
+    "historyEmptyText": "Bu yerda yetkazilgan buyurtmalar va voz kechishlar paydo boʻladi."
+  },
+  "telegram": {
+    "loading": {
+      "title": "Telegram'ga ulanmoqdamiz",
+      "text": "Kirish tekshirilmoqda, bir necha soniya…"
+    },
+    "onboarding": {
+      "title": "Qanday davom etasiz?",
+      "text": "Bu Telegram hali akkauntga bogʻlanmagan. Yangi akkaunt yarating yoki saytdagi akkauntingizga kiring.",
+      "newCustomer": "Men yangi mijozman",
+      "warning": "Yangi akkaunt yaratilgandan keyin bu Telegram'ni saytdagi akkauntga bogʻlab boʻlmaydi.",
+      "haveAccount": "Menda akkaunt bor",
+      "linkTitle": "Saytdagi akkauntga kirish",
+      "linkText": "Saytdagi akkauntingiz email va parolini kiriting. Bu Telegram unga bogʻlanadi.",
+      "linkSubmit": "Kirish va bogʻlash",
+      "back": "Orqaga",
+      "linkForbidden": "Mini App faqat mijozlar uchun. Mijoz akkauntiga kiring yoki yangisini yarating."
+    },
+    "forbidden": {
+      "title": "Mini App faqat mijozlar uchun",
+      "text": "Xodimlar saytning oddiy versiyasida ishlaydi."
+    },
+    "restart": {
+      "title": "Telegram seansi tugadi",
+      "text": "Mini App'ni yopib, bot bilan chatdan qayta oching."
+    },
+    "disabled": {
+      "title": "Telegram vaqtincha mavjud emas",
+      "text": "Telegram orqali kirish hozir oʻchirilgan. Keyinroq urinib koʻring."
+    },
+    "error": {
+      "title": "Ulanib boʻlmadi",
+      "text": "Internetni tekshirib, qayta urinib koʻring."
+    },
+    "retry": "Qayta urinish",
+    "languageSaveFailed": "Tilni saqlab boʻlmadi. Qayta urinib koʻring.",
+    "profile": {
+      "title": "Profil",
+      "loading": "Profil yuklanmoqda…",
+      "errorTitle": "Profilni yuklab boʻlmadi",
+      "errorText": "Ulanishni tekshiring va qayta urinib koʻring.",
+      "details": "Shaxsiy maʼlumotlar",
+      "phoneNotSet": "Koʻrsatilmagan",
+      "emailNotSet": "Qoʻshilmagan",
+      "languageHint": "Til ekranning yuqori qismida oʻzgartiriladi.",
+      "edit": "Oʻzgartirish",
+      "save": "Saqlash",
+      "saving": "Saqlanmoqda…",
+      "cancel": "Bekor qilish",
+      "saved": "Maʼlumotlar saqlandi",
+      "credentials": {
+        "title": "Saytga kirish",
+        "text": "Restoran saytiga kirish uchun email va parol qoʻshing",
+        "submit": "Email va parol qoʻshish",
+        "added": "Email va parol qoʻshildi. Endi saytga email va parol bilan kirishingiz mumkin."
+      },
+      "addresses": {
+        "title": "Saqlangan manzillar",
+        "listLabel": "Saqlangan manzillar roʻyxati",
+        "loading": "Manzillar yuklanmoqda…",
+        "errorTitle": "Manzillarni yuklab boʻlmadi",
+        "emptyTitle": "Saqlangan manzillar yoʻq",
+        "emptyText": "Manzil yetkazib berish bilan buyurtma berishda saqlanadi.",
+        "default": "Asosiy"
+      }
+    },
+    "notFound": {
+      "title": "Boʻlim mavjud emas",
+      "text": "Mini App'da bunday sahifa yoʻq."
+    },
+    "nav": {
+      "label": "Mini App boʻlimlari",
+      "menu": "Menyu",
+      "cart": "Savat",
+      "orders": "Buyurtmalar",
+      "account": "Profil"
+    }
+  }
+}

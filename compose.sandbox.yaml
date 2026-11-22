@@ -1,0 +1,58 @@
+# Sandbox mode: an isolated database for manual checks in the browser and
+# the Telegram Mini App. Neither the main database `food_delivery` nor
+# `food_delivery_test` is used by the application in this mode.
+#
+# Usage (from the repository root):
+#   docker compose --env-file .env --env-file .env.sandbox \
+#     -f compose.yaml -f compose.dev.yaml -f compose.sandbox.yaml up -d db-sandbox backend worker
+#
+# `.env.sandbox` (git-ignored) holds SANDBOX_POSTGRES_PASSWORD. Data and
+# uploaded images live in the sandbox-only named volumes
+# `food-delivery_db-sandbox-data` and `food-delivery_media-sandbox-data`
+# (DEC-158); they survive container restarts and re-creation and are never
+# shared with the main stack (`db-data`, `media-data`). Never run
+# `docker compose down -v`: it deletes them. The port is not published: only
+# containers on the project network can reach it.
+
+x-sandbox-database-url: &sandbox-database-url "postgresql+psycopg://${SANDBOX_POSTGRES_USER:-sandbox}:${SANDBOX_POSTGRES_PASSWORD:?set SANDBOX_POSTGRES_PASSWORD in .env.sandbox}@db-sandbox:5432/food_delivery_sandbox"
+
+services:
+  db-sandbox:
+    image: postgis/postgis:16-3.6
+    environment:
+      POSTGRES_DB: food_delivery_sandbox
+      POSTGRES_USER: ${SANDBOX_POSTGRES_USER:-sandbox}
+      POSTGRES_PASSWORD: ${SANDBOX_POSTGRES_PASSWORD:?set SANDBOX_POSTGRES_PASSWORD in .env.sandbox}
+    volumes:
+      # Same empty init directory as db/db-test: PostGIS comes from Alembic 0001.
+      - ./infra/postgres/initdb.d:/docker-entrypoint-initdb.d:ro
+      # Persistent sandbox data (DEC-158); PGDATA of the image.
+      - db-sandbox-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    environment:
+      DATABASE_URL: *sandbox-database-url
+    # Images uploaded in the sandbox go to a sandbox-only volume (DEC-158):
+    # it replaces the media-data volume of compose.yaml at the same path, so
+    # the main stack's images are never mixed with sandbox ones.
+    volumes:
+      - media-sandbox-data:/app/media
+    depends_on:
+      db-sandbox:
+        condition: service_healthy
+
+  worker:
+    environment:
+      DATABASE_URL: *sandbox-database-url
+    depends_on:
+      db-sandbox:
+        condition: service_healthy
+
+volumes:
+  db-sandbox-data:
+  media-sandbox-data:

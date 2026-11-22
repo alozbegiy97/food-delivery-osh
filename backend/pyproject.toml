@@ -1,0 +1,56 @@
+[project]
+name = "food-delivery-backend"
+version = "0.1.0"
+description = "Backend of the food delivery demo (modular monolith, FastAPI)."
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.32",
+    # Approved stack is SQLAlchemy 2.0; 2.1 requires a separate decision.
+    "sqlalchemy[asyncio]>=2.0.36,<2.1",
+    "psycopg[binary]>=3.2",
+    "alembic>=1.14",
+    "pydantic-settings>=2.6",
+    "geoalchemy2>=0.20.0,<0.21",
+    "argon2-cffi>=25.1",
+    "pyjwt>=2.10",
+    "email-validator>=2.2",
+    "slowapi>=0.1.9",
+    "pillow>=11",
+    "python-multipart>=0.0.20",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "httpx>=0.28",
+    "ruff>=0.8",
+]
+
+[tool.uv]
+# The backend is an application, not a library: do not build/install it.
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "ASYNC", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+# S106: fake hashes/tokens in test data are not secrets.
+"tests/**" = ["S101", "S106"]
+# UP037: SQLAlchemy resolves `Mapped[...]` annotations while the class is
+# created, so forward references to models declared later must stay quoted.
+"app/modules/*/models.py" = ["UP037"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
+testpaths = ["tests"]
+markers = [
+    "db: test needs the isolated PostgreSQL/PostGIS test database (TEST_DATABASE_URL)",
+]
