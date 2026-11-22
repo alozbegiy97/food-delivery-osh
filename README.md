@@ -11,6 +11,22 @@ TypeScript** frontend, one background worker, everything in Docker Compose.
 > real payments, and all restaurant, menu and price data is fictitious.
 > See [Demo limitations](#demo-limitations).
 
+## Screenshots
+
+*Demo data only: the restaurant, dishes and prices are fictitious test
+fixtures.*
+
+![Home page on desktop: the "oven" hero with a pizza, opening status and the menu button](docs/screenshots/home-desktop.png)
+
+<p>
+  <img src="docs/screenshots/menu-mobile.png" width="300" alt="Menu on a phone: search, category chips and dish cards, one dish marked as unavailable">
+  &nbsp;
+  <img src="docs/screenshots/miniapp-light.png" width="300" alt="Telegram Mini App menu in the light theme with the compact oven banner and the bottom tab bar">
+</p>
+
+Top: the home page on a desktop (1280×800). Below: the menu on a phone and
+the Telegram Mini App in the light theme (both 390×844).
+
 ## What it does
 
 ### Customer website
